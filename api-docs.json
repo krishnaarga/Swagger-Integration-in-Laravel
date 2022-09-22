@@ -1,0 +1,316 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Student API List",
+        "description": "Student CRUD operation performed using swagger",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/students": {
+            "get": {
+                "tags": [
+                    "Student API"
+                ],
+                "summary": "Display All Students List",
+                "operationId": "students",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": 1
+                                                    },
+                                                    "roll_number": {
+                                                        "type": "number",
+                                                        "example": 1
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "Student Name"
+                                                    },
+                                                    "class": {
+                                                        "type": "string",
+                                                        "example": "Student Class"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2022-12-01T09:25:53.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2022-12-01T09:25:53.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/student-details/{student_id}": {
+            "get": {
+                "tags": [
+                    "Student API"
+                ],
+                "summary": "Display Student all information",
+                "operationId": "student-details",
+                "parameters": [
+                    {
+                        "name": "student_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "roll_number": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Student Name"
+                                        },
+                                        "class": {
+                                            "type": "string",
+                                            "example": "Student Class"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2022-12-01T09:25:53.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2022-12-01T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/student-update/{student_id}": {
+            "put": {
+                "tags": [
+                    "Student API"
+                ],
+                "summary": "Update Student Information",
+                "operationId": "student-update",
+                "parameters": [
+                    {
+                        "name": "student_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "class",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": "1"
+                                        },
+                                        "roll_number": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Student Name"
+                                        },
+                                        "class": {
+                                            "type": "string",
+                                            "example": "Student Class"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2022-12-01T09:25:53.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2022-12-01T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/student-delete/{student_id}": {
+            "delete": {
+                "tags": [
+                    "Student API"
+                ],
+                "summary": "Delete Student information",
+                "operationId": "student-delete",
+                "parameters": [
+                    {
+                        "name": "student_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Delete student information"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/student-add": {
+            "post": {
+                "tags": [
+                    "Student API"
+                ],
+                "summary": "Add New Student",
+                "operationId": "student-add",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "class",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "roll_number": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Student Name"
+                                        },
+                                        "class": {
+                                            "type": "string",
+                                            "example": "Student Class"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2022-12-01T09:25:53.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2022-12-01T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

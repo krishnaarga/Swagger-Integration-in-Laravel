@@ -68,7 +68,9 @@ Route::post('student-add', function(Request $request){
 });
 ```
 
-After that you have to download `api-docs.json` file from top and past in the `storage/api-docs/` directory.## Test you API Documentation.
+After that you have to download `api-docs.json` file from top and paste in the `storage/api-docs/` directory.
+
+## Test you API Documentation.
 
 Open below `URL` in the browser and use the API.
 

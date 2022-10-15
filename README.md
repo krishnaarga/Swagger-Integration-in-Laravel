@@ -5,25 +5,36 @@
 Download required package using below command.
 
 ```bash
-  composer require "darkaonline/l5-swagger"
+composer require "darkaonline/l5-swagger"
 ```
 
 ## Configuration
+Copy the below `code` and open your `App/Http/Controllers/Controller.php` file and paste inside the Controller class.
+```bash
+/**
+ * @OA\OpenApi(
+ *     @OA\Info(
+ *         version="1.0",
+ *         title="API Documentation",
+ *         description="Stripe Documentation",
+ *     )
+ * )
+ */
+```
 
 Open your `config/app.php` and add below line in `providers` section.
-
 ```bash
-  L5Swagger\L5SwaggerServiceProvider::class,
+L5Swagger\L5SwaggerServiceProvider::class,
 ```
 
 You can publish L5-Swagger's config and view files into your project by running:
 
 ```bash
-  php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
-  php artisan l5-swagger:generate
+php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
+php artisan l5-swagger:generate
 ```
-Copy the below `code` and past in `routes/api.php` file.
 
+Copy the below `code` and past in `routes/api.php` file.
 ```php
 Route::get('students', function(){
     return [
@@ -75,7 +86,7 @@ After that you have to download `api-docs.json` file from top and paste in the `
 Open below `URL` in the browser and use the API.
 
 ```url
-  http://127.0.0.1:8000/api/documentation
+http://127.0.0.1:8000/api/documentation
 ```
 
 `Optional`
@@ -85,7 +96,7 @@ Open below `URL` in the browser and use the API.
 Open file `config/l5-swagger.php` and change the URL of API documentation using below.
 
 ```url
-  documentations > default > routes > api => 'your_url'
+documentations > default > routes > api => 'your_url'
 ```
 
 ## Modify swagger API Documentation.
